@@ -1,0 +1,586 @@
+{
+    "uiPlay": "INICIAR PARTIDA",
+    "uiPause": "PaUSA",
+    "uiMultiplayer": "MULTIJUGADOR",
+    "uiOptions": "OPCIONES",
+    "uiExit": "SALIR DEL JUEGO",
+    "uiConfirm": "ACEPTAR",
+    "uiCancel": "CANCELAR",
+    "uiContinue": "CONTINUAR",
+    "uiQuit": "SALIR AL MENÚ",
+    "configLanguage": "Idioma",
+    "optionLanguage": "Español",
+	"configMasterVolume": "Volumen global",
+    "configSoundVolume": "Volumen de sonido",
+    "configMusicVolume": "Volumen de música",
+    "narrator1": [
+        "Año 27 después de la Guerra Intergaláctica de Orión (GIO). Los miembros de la Alianza son tan sólo ya personajes de las historias que los abuelos cuentan a sus nietos.",
+        "Después de haber diezmado las líneas enemigas, la Sociedad gobierna ahora con puño de hierro sobre los ciudadanos que una vez juró proteger.",
+        "La GIO ha crecido la brecha entre los que antes ya estaban separados, dejando en sus vidas de lujo y caprichos a los más ricos, conocidos como la Élite, y empobreciendo más si cabe a quienes apenas tenían antes.",
+        "Sin embargo, todavía existe algo que los une, algo que ya los unía antes de la GIO: Kabalayn. Este juego revolucionó el mercado del entretenimiento conquistando a todos por igual.",
+        "Es por esto que ser un jugador con gran habilidad en Kabalayn se respeta en cualquier galaxia conocida. No son pocos los torneos que se organizan cada ciclo circadiano, y cada uno con un premio más suculento que el anterior, entre ellos, llegar a formar parte de la Élite.",
+        "Y es aquí donde comienza la historia de Vir..."
+    ],
+    "cutscene1": [
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "¿Así que crees que puedes ganarme?"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "No lo creo, lo sé."
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "Entonces, no te importará apostar todo tu dinero, ¿verdad?"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Pues claro que no."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Mierda.)" 
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "De acuerdo, tenemos trato." 
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "A jugar." 
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Vir, en menuda te has metido, compañera.)" 
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "No pienso perder." 
+        }
+    ],
+    "cutscene2": [
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "P-Pero..."
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "¿¡Cómo es posible!?"
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "¡¡Si eres una niñata!!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Te dije que te iba a ganar."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Menos mal lol.)"
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "No te crujo aquí mismo porque has ganado justamente. Ahora, ¡largo!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Creo que te olvidas de algo."
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "¿...?"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Te recuerdo que habíamos apostado. Todo."
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "..."
+        },
+        {
+            "sprite": "spr_enemy.png",
+            "dialog": "Toma. Y no vuelvas."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¡¡Graciaaass!!"
+        }
+    ],
+    "narrator2": [
+        "Tras esta victoria, no son pocos los que quieren probar suerte contra la novata, y Vir gana a todos y cada uno de ellos. ¿Será capaz de hacerlo con los siguientes...?"
+    ],
+    "cutscene3": [
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿Queréis pelear los dos juntitos? ¿Tan cobardes sois?"
+        },
+        {
+            "sprite": "spr_quadropa.png",
+            "dialog": "No seas estúpida. Kabalayn es un cara a cara. Pelearemos por separado."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Al menos respetáis eso, menos mal."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿Quién quiere empezar?"
+        },
+        {
+            "sprite": "spr_kyrgos.png",
+            "dialog": "Yo mismo. Te vas a enterar de lo que es bueno."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Lo que tú digas..."
+        }
+    ],
+    "cutscene4": [
+        {
+            "sprite": "spr_kyrgos.png",
+            "dialog": "Tienes suerte de haberme pillado hoy, he tenido un mal día."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Pero si habéis venido vosotros a por mí...)"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Espero que tu hermano sea un poco mejor al menos."
+        },
+        {
+            "sprite": "spr_quadropa.png",
+            "dialog": "Cómo te atreves a hablarnos así mocosa... Yo soy el mejor de los dos, y te lo voy a demostrar ahora mismo."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Sí que debéis ser hermanos, sois tal para cual."
+        },
+        {
+            "sprite": "spr_quadropa.png",
+            "dialog": "Prepárate."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Tal para cual..."
+        }
+    ],
+    "cutscene5": [
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Ahora me dirás que tú también tienes un mal día, ¿verdad?"
+        },
+        {
+            "sprite": "spr_quadropa.png",
+            "dialog": "Ha sido suerte. Y lo sabes."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Lo que tú digas, pero os he ganado a los dos."
+        },
+        {
+            "sprite": "spr_quadropa.png",
+            "dialog": "Veremos lo que pasa la próxima vez."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Ah, ¿pero os habéis quedado con ganas de más?"
+        },
+        {
+            "sprite": "spr_kyrgos.png",
+            "dialog": "Déjalo ya Quadropa, no merece la pena."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Vaya par..."
+        }
+    ],
+    "narrator3": [
+        "Los rumores corren como la pólvora por las calles de El'Dheva, y no iba a ser menos con la historia de Vir. Con sus ojos puestos en el Torneo Intergaláctico del Sector 42, una vieja leyenda se cruza en el camino de Vir..."
+    ],
+    "cutscene6": [
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Disculpa, ¿sabes dónde puedo encontrar a una tal Vir?"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "La tiene delante, señor."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Jaja... Llámame Landius, hace años que nadie me llama señor."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Me lo puedo imaginar, te dábamos todos por muerto."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Eso he oído, necesitaba tomarme mi tiempo."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Pero ahora estoy aquí, y tengo una propuesta para ti."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿Para mí?"
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "¿Te sorprende? Todo el mundo habla de ti últimamente."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Bueno, ya, pero aún así..."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Eres más calmada de lo que me habían hecho saber. Supongo que Kabalayn despierta tu vena competitiva."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "P-Puede ser..."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Basta de cháchara."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "He oído que no has perdido nunca, pero vas a necesitar algo más si quieres llegar fuera de estos callejones."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Parece que todavía sabe de lo que habla.)"
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "¿Quieres que te entrene?"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿¡¿¡QUÉ!?!?"
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Lo que oyes. Gáname una partida, es todo lo que te pido a cambio."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿Es en serio?"
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Totalmente."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Guau..."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Vale. Vamos."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Se despierta la bestia..."
+        }
+    ],
+    "cutscene7": [
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "He de admitir... que no me lo has puesto nada fácil."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Jajaja... esa era la idea, te lo tenías que ganar."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Entonces, ¿vas a entrenarme?"
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Un trato es un trato."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Gracias... no te decepcionaré."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Lo sé, pero te aviso que no será fácil."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Estoy lista para lo que sea. Llevo toda mi vida esperando por algo así."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Ese es el espíritu. Procura descansar hoy, mañana empezamos."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "De acuerdo."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Y gracias, de verdad."
+        }
+    ],
+    "narrator4": [
+        "Landius y Vir comienzan el entrenamiento de la ya no tan novata duelista de Kabalayn. Ambos poseen un carácter que embaucaría a cualquiera a unirse a su entrenamiento. Entrenan sin descanso, hasta que comienza el torneo.",
+        "TORNEO INTERGALACTICO\nSECTOR 42\nDía 1"
+    ],
+    "cutscene8": [
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "Helloooo!!!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog":"Ehhh, todo apunta a que tú eres Aloha, ¿me equivoco?"
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "That's right!"
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "¡Otra chica! ¡¡¡Me encanta!!!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Yo tampoco me he enfrentado a ninguna por ahora, tengo curiosidad."
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "¡Va a ser genial!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Empiezo a entender por qué el público la quiere tanto.)"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿Estás preparada?"
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "I'm reaaaaady!"
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "¡Vamos allá!"
+        }
+    ],
+    "cutscene9": [
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Ha estado bien, la verdad. Bien jugado."
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "Yesss!!"
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "¡Bien jugado!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Al fin alguien que juega con deportividad.)"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿Nos seguiremos viendo por aquí?"
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "¡Pues claro! ¡Mucha suerte con tus siguientes duelos!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Muchas gracias."
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "You're welcome, baby!"
+        }
+    ],
+    "narrator5": [
+        "TORNEO INTERGALACTICO\nSECTOR 42\nDía 2"
+    ],
+    "cutscene10": [
+        {
+            "sprite": "spr_keetesh.png",
+            "dialog": "Vamos a pelear."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿Ni un hola ni nada?"
+        },
+        {
+            "sprite": "spr_keetesh.png",
+            "dialog": "Hola. Vamos a pelear."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Ni siquiera sé quién eres..."
+        },
+        {
+            "sprite": "spr_keetesh.png",
+            "dialog": "Soy Keetesh. Vamos a pelear."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Este tío no está bien...)"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Vale, me toca contra ti. Vamos."
+        },
+        {
+            "sprite": "spr_keetesh.png",
+            "dialog": "¡A pelear!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Ay mamá..."
+        }
+    ],
+    "cutscene11": [
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Bien jugad-"
+        },
+        {
+            "sprite": "spr_keetesh.png",
+            "dialog": "Adiós."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¿Te vas a ir así sin más?"
+        },
+        {
+            "sprite": "spr_keetesh.png",
+            "dialog": "Hemos peleado. He perdido. No hay más que hablar."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Pero tú..."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Déjalo Vir, no merece la pena."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Tienes razón."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Has jugado muy bien, estoy muy orgulloso de ti."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Gracias, pero esto aún no ha acabado."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Lo sé."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "¿Estás nerviosa?"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Un poco, pero menos de lo que me esperaba."
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Eso es buena señal. Por hoy descansa, mañana es el gran día."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "A ver qué pasa."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "(Voy a por ti, Krotik.)"
+        }
+    ],
+    "narrator6": [
+        "TORNEO INTERGALACTICO\nSECTOR 42\nDía 3 - Gran Final"
+    ],
+    "cutscene12": [
+        {
+            "sprite": "spr_krotik.png",
+            "dialog": "Al fin, la famosa Vir. No pensaba que fueras a llegar hasta aquí."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Pues aquí estoy."
+        },
+        {
+            "sprite": "spr_krotik.png",
+            "dialog": "No te lo tomes a mal, es solo que nadie había llegado a la final en su primer Interplanetario."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Siempre hay una primera vez para todo."
+        },
+        {
+            "sprite": "spr_krotik.png",
+            "dialog": "Jajaja..."
+        },
+        {
+            "sprite": "spr_krotik.png",
+            "dialog": "Se te ve muy decidida. ¿Vamos a ello?"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "Vamos."
+        }
+    ],
+    "cutscene13": [
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "No me lo puedo creer..."
+        },
+        {
+            "sprite": "spr_krotik.png",
+            "dialog": "Pues créetelo, acaba de pasar."
+        },
+        {
+            "sprite": "spr_krotik.png",
+            "dialog": "¡Enhorabuena!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¡¡¡Gracias!!!"
+        },
+        {
+            "sprite": "spr_aloha.png",
+            "dialog": "Let's go girl, ¡¡¡bien hecho Vir!!!"
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "¡Es increíble!"
+        },
+        {
+            "sprite": "spr_landius.png",
+            "dialog": "Te lo mereces, Vir."
+        },
+        {
+            "sprite": "spr_vir.png",
+            "dialog": "No habría sido posible sin ti Landius, gracias."
+        }
+    ]
+}

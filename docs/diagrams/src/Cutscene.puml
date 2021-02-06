@@ -1,0 +1,99 @@
+@startuml
+
+title Cutscene
+
+package Scenes {
+    class SceneFade
+
+    interface Screen {
+        + pre_update(events: List<Event>): void
+        + update(delta_time: int): void 
+        + draw(screen: Surface): void
+    }
+    
+    package Stage {
+        class ScreenBackground
+    }
+
+    package Cutscene {
+        class Cutscene {
+            - {static} current_cutscene: int
+            - transition: bool
+            - transition_delay: int
+            - snd_transition: Sound
+            + Cutscene(update: bool)
+            + stop(): void
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+
+        SceneFade <|-- Cutscene
+        Cutscene --> "1" ScreenBackground: - background
+        Cutscene "1" *-- "*" Screen
+        
+        class ScreenNarrator {
+            - {static} current_narrator: int
+            - line_list: List<string>
+            - current_index: int
+            - current_string: string
+            - current_line: string
+            - input_string: List<String>
+            - text_x: int
+            - text_y: int
+            - line_length: int
+            - font: Font
+            - snd_blit: Sound
+            - interval: int
+            - ticks: int
+            - sleep_ticks: int
+            - key_interact: bool
+            + ScreenNarrator()
+            - process_line(): void
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int, scene: Scene): void 
+            + draw(screen: Surface): void
+        }
+        Screen <|-- ScreenNarrator
+        
+        class ScreenDialog {
+            - {static} current_dialog: int
+            - sprite_list: List<Surface>
+            - line_list: List<string>
+            - speaker: int
+            - portrait: Dictionary<string, Surface>
+            - portrait_left: Portrait
+            - portrait_right: Portrait
+            - sprite_left: Surface
+            - sprite_right: Surface
+            - spr_box: Surface
+            - box_x: int
+            - box_y: int
+            - spr_box_pause: List<Surface>
+            - box_pause_x: int
+            - box_pause_y: int
+            - box_pause_index: int
+            - current_index: int
+            - current_string: string
+            - current_line: string
+            - input_string: List<string>
+            - text_x: int
+            - text_y: int
+            - line_length: int
+            - font: Font
+            - snd_blit: Sound
+            - interval: int
+            - ticks: int
+            - sleep_ticks: int
+            - key_interact: bool
+            + ScreenDialog()
+            - process_line(): void
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int, scene: Scene): void 
+            + draw(screen: Surface): void
+        }
+        Screen <|-- ScreenDialog
+    }
+}
+
+@enduml

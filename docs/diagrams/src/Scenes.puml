@@ -1,0 +1,45 @@
+@startuml
+
+title Scenes
+
+package Scenes {
+    class Director << (S,#FF7700) Singleton >> {
+        - {static} instance: Director
+        - screen: Surface
+        - quit_scene: bool
+        - clock: Clock
+        + {static} get_instance(): Director
+        - Director(): void
+        + push_scene(scene: Scene): void
+        + pop_scene(): void
+        + change_scene(scene: Scene): void
+        + run(): void
+        - loop(scene: Scene): void
+        + game_end(): void
+    }
+
+    abstract class Scene {
+        + Scene()
+        + {abstract} pre_update(events: List<Event>): void
+        + {abstract} update(delta_time : int): void 
+        + {abstract} draw(screen : Surface): void
+    }
+    Director "1" *-- "*" Scene
+    
+    class SceneFade {
+        - {static} is_fading: bool
+        - {static} function: string
+        - {static} arguments: List<string>
+        - {static} executed: bool
+        - {static} counter: int
+        - {static} fades: Group<Fade>
+        + SceneFade()
+        + fade(function: string, args: List<string>)
+        + pre_update(events: List<Event>): void
+        + update(delta_time : int): void 
+        + draw(screen : Surface): void
+    }
+    Scene <|-- SceneFade
+}
+
+@enduml

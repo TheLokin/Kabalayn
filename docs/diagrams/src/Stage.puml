@@ -1,0 +1,91 @@
+@startuml
+
+title Stage
+
+package Scenes {
+    class SceneFade
+
+    interface Screen {
+        + pre_update(events: List<Event>): void
+        + update(delta_time: int): void 
+        + draw(screen: Surface): void
+    }
+
+    package Scenes.Stage {
+        class Stage {
+            - snd_click: Sound
+            + Stage()
+            + start(): void
+            + stop(victory: bool): void
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+        SceneFade <|-- Stage
+        Stage "1" *-- "*" Screen
+
+        class ScreenBackground {
+            - spr_panel: Surface
+            - display: Surface
+            - entities: Group<GameObject>
+            - projectiles: Group<GameObject>
+            - balls: Group<GameObject>
+            - top_particles: Group<GameObject>
+            - bottom_particles: Group<GameObject>
+            + ScreenBackground(entities: Group<GameObject>, balls: List<Tuple<int, int, int>>)
+            + screen_shake(screen: Surface): void
+            + screen_distorsion(screen: Surface): void
+            + draw(screen: Surface): void
+        }
+        Screen <|-- ScreenBackground
+
+        class ScreenIntro {
+            - shake: bool
+            - instructions: Instructions
+            - transition: bool
+            - transition_delay: int
+            - snd_transition: Sound
+            + ScreenIntro(entities: Group<GameObject>, balls: List<Tuple<int, int, int>>)
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int, scene: Scene): void
+            + draw(screen: Surface): void
+        }
+        ScreenBackground <|-- ScreenIntro
+        
+        abstract class ScreenPlay {
+            - shake: bool
+            - shake_duration: int
+            - shake_time: int
+            - score: bool
+            - player_score: int
+            - enemy_score: int
+            - stage_balls: List<Tuple<int, int, int>>
+            - ball_delay: int
+            - ball_time: int
+            - max_balls: int
+            - snd_ball: Sound
+            + ScreenPlay(entities: Group<GameObject>, balls: List<Tuple<int, int, int>>, max_balls: int)
+            + {abstract} check_score(scene: Scene): void
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int, scene: Scene): void
+            + draw(screen: Surface): void   
+        }
+        ScreenBackground <|-- ScreenPlay
+        
+        class ScreenNormal {
+            - max_score: int
+            + ScreenNormal(entities: Group<GameObject>, balls: List<Tuple<int, int, int>>, max_balls: int)
+            + check_score(scene: Scene): void
+        }
+        ScreenPlay <|-- ScreenNormal
+
+        class ScreenHardcore {
+            - max_score: int
+            + ScreenHardcore(entities: Group<GameObject>, balls: List<Tuple<int, int, int>>, max_balls: int)
+            + check_score(scene: Scene): void
+        }
+        ScreenPlay <|-- ScreenHardcore
+    }
+}
+
+@enduml

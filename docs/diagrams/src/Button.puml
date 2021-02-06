@@ -1,0 +1,86 @@
+@startuml
+
+title Buttons
+
+package Objects {
+    abstract class GameObject
+
+    package Objects.Buttons {
+        abstract class Button {
+            - is_selected: bool
+            - opacity: int
+            - text_code: string
+            - font: Font
+            - snd_click: Sound
+            - snd_choice: Sound
+            + Button(text_code: string)
+            + execute(scene: Scene): void
+            + key_up(scene: Scene): void
+            + key_down(scene: Scene): void
+            + key_left(scene: Scene): void
+            + key_right(scene: Scene): void
+            + pre_update(events: List<Event>, scene: Scene): void
+            + update(delta_time: int): void 
+            + {abstract} draw(screen: Surface): void
+        }
+        GameObject <|-- Button
+
+        abstract class ButtonAction {
+            - x: int
+            - y: int
+            - spr_box: Surface
+            + ButtonAction(x: int, y: int, tile_width: int, tile_height: int, text_code: string)
+            + draw(screen: Surface): void
+        }
+        Button <|-- ButtonAction
+
+        abstract class ButtonOption {
+            - option: int
+            - options: List<T>
+            - is_circular: bool
+            - x: int
+            - y: int
+            - text_secondary: string
+            - spr_box: Surface
+            + ButtonOption(x: int, y: int, tile_width: int, tile_height: int, option: int, options: List<T>, is_circular: bool, text_code: string)
+            + {abstract} {static} cancel(scene: Scene): void
+            + {abstract} {static} confirm(scene: Scene): void
+            + key_right(scene: Scene): void
+            + key_left(scene: Scene): void
+            + draw(screen: Surface): void
+        }
+        Button <|-- ButtonOption
+        ButtonOption --> "1" ArrowLeft: - arrow_left
+        ButtonOption --> "1" ArrowRight: - arrow_right
+        
+        class Arrow {
+            - snd_click: Sound
+            + Arrow(button: Button)
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+        GameObject <|-- Arrow
+        Button "1" <-- Arrow: - button
+
+        class ArrowLeft{
+            - limir_option: int
+            - spr_arrow: Surface
+            - x: int
+            - y: int
+            + ArrowLeft(button: Button, x: int, y: int)
+        }
+        Arrow <|-- ArrowLeft
+        
+        class ArrowRight {
+            - limir_option: int
+            - spr_arrow: Surface
+            - x: int
+            - y: int
+            + ArrowRight(button: Button, x: int, y: int)
+        }
+        Arrow <|-- ArrowRight
+    }
+}
+
+@enduml

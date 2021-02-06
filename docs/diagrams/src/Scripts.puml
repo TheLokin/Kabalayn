@@ -1,0 +1,59 @@
+@startuml
+
+title Scripts
+
+package Scripts {
+    package Scripts.Controllers {
+        interface Controller {
+            + add(name: string, List<int>): void
+            + check(name: string, List<Event>): bool
+            + check_pressed(name: string, List<Event>): bool
+            + check_released(name: string, List<Event>): bool
+        }
+
+        class Keyboard {
+            - {static} bindings: Dictionary<int, List<int>>
+            + {static} add(name: string, List<int>): void
+            + {static} check(name: string, List<Event>): bool
+            + {static} check_pressed(name: string, List<Event>): bool
+            + {static} check_released(name: string, List<Event>): bool
+        }
+        Controller <|-- Keyboard
+    }
+
+    package Scripts.Managers {
+        class FontManager {
+            - {static} resources: Dictionary<int, Font>
+            + {static} load_font(name: string, size: int): Font
+        }
+
+        class LanguageManager {
+            - {static} resources: Dictionary<string, string>
+            + {static} languages(): List<string>
+            + {static} change_language(lang: string): void
+            + {static} load_text(name: string): string
+        }
+
+        class SoundManager {
+            - {static} resources: Dictionary<int, Sound>
+            + {static} set_master(master_volume: float): void
+            + {static} set_sound(sound_volume: float): void
+            + {static} set_music(music_volume: float): void
+            + {static} load_sound(name: string): Sound
+            + {static} load_music(name: string): void
+        }
+
+        class SpriteFontManager {
+            - {static} resources: Dictionary<int, Dictionary<string, Surface>>
+            + {static} load_font(name: string, string_map: string): void
+            + {static} render_text(name: string, text: string): Surface
+        }
+
+        class SpriteManager {
+            - {static} resources: Dictionary<int, Surface>
+            + {static} load_sprite(name: string): Surface
+        }
+    }
+}
+
+@enduml

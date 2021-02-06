@@ -1,0 +1,61 @@
+@startuml
+
+title ButtonsOptions
+
+package Buttons {
+    class ButtonOption
+    
+    class ButtonLanguage{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonLanguage(scene: Scene)
+        + {static} cancel(scene: Scene): void 
+        + {static} confirm(scene: Scene): void 
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+        + update(delta_time: int): void 
+    }
+    ButtonOption <|-- ButtonLanguage
+    
+    class ButtonSoundVolume{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonMasterVolume(scene: Scene)
+        + {static} cancel(scene: Scene): void 
+        + {static} confirm(scene: Scene): void 
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+        + update(delta_time: int): void 
+    }
+    ButtonOption <|-- ButtonMasterVolume
+
+    class ButtonMasterVolume{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonMasterVolume(scene: Scene)
+        + {static} cancel(scene: Scene): void 
+        + {static} confirm(scene: Scene): void 
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+        + update(delta_time: int): void 
+    }
+    ButtonOption <|-- ButtonSoundVolume
+
+    class ButtonMusicVolume{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonMusicVolume(scene: Scene)
+        + {static} cancel(scene: Scene): void 
+        + {static} confirm(scene: Scene): void 
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+        + update(delta_time: int): void 
+    }
+    ButtonOption <|-- ButtonMusicVolume
+}
+
+@enduml

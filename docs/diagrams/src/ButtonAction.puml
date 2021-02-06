@@ -1,0 +1,89 @@
+@startuml
+
+title ButtonsAction
+
+package Buttons {
+    class ButtonAction
+
+    class ButtonPlay {
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonPlay(scene: Scene)
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+    }
+    ButtonAction <|-- ButtonPlay
+
+    class ButtonMultiplayer{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonMultiplayer(scene: Scene)
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+    }
+    ButtonAction <|-- ButtonOptions
+
+    class ButtonOptions{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonOptions(scene: Scene)
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+    }
+    ButtonAction <|-- ButtonMultiplayer
+    
+    class ButtonExit{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonExit(scene: Scene)
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+    }
+    ButtonAction <|-- ButtonExit
+
+    class ButtonCancel{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonCancel(scene: Scene)
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+    }
+    ButtonAction <|-- ButtonConfirm
+
+    class ButtonConfirm{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonConfirm(scene: Scene)
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+    }
+    ButtonAction <|-- ButtonCancel
+    
+    class ButtonContinue{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonContinue(scene: Scene)
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+    }
+    ButtonAction <|-- ButtonContinue
+    
+    class ButtonQuit{
+        - {static} instances: Dictionary<Scene, Button>
+        + ButtonQuit(scene: Scene)
+        + execute(scene: Scene): void
+        - execute_async(scene: Scene): void
+        + key_up(scene: Scene): void
+        + key_down(scene: Scene): void
+    }
+    ButtonAction <|-- ButtonQuit
+}
+
+@enduml

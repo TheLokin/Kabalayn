@@ -1,0 +1,25 @@
+@startuml
+    title Objects
+    
+    package Objects{
+        abstract class GameObject{
+            + GameObject()
+            + {abstract} pre_update(events: List<Events>): void
+            + {abstract} update(delta_time: int): void
+            + {abstract} draw(surface: Surface): void
+            + destroy(): void
+        }
+        
+        class Group{
+            + Group(objects: List<GameObject>)
+            + add(objects: List<GameObject>): void
+            + remove(objects: List<GameObject>): void
+            + clear(): void
+            + pre_update(events: List<Events>): void
+            + update(delta_time: int): void
+            + draw(surface: Surface): void
+        }
+        GameObject  "*" -o "*" Group
+    }
+    
+@enduml

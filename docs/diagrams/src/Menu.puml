@@ -1,0 +1,62 @@
+@startuml
+
+title Menu
+
+package Scenes {
+    class SceneFade
+
+    interface Screen {
+        + pre_update(events: List<Event>): void
+        + update(delta_time: int): void 
+        + draw(screen: Surface): void
+    }
+
+    package Stage {
+        class ScreenBackground
+    }
+
+    package Menu {
+        class Menu {
+            - {static} loaded: bool
+            + Menu(victory: bool)
+            + exec_play(): void
+            + exec_multiplayer(): void
+            + exec_options(): void
+            + exec_exit(): void
+            + exec_cancel(): void
+            + exec_confirm(): void
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+        SceneFade <|-- Menu
+        Menu --> "1" ScreenBackground: - background
+        Menu "1" *-- "*" Screen
+
+        class ScreenMenu {
+            - text_y: int
+            - text: string
+            - font: Font
+            - buttons: Group<Button>
+            + ScreenMenu(scene: Scene)
+            + pre_update(events: List<Event>, scene: Scene): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+        Screen <|-- ScreenMenu
+
+        class ScreenOptions {
+            - text_y: int
+            - text: string
+            - font: Font
+            - buttons: Group<Button>
+            + ScreenOptions(scene: Scene)
+            + pre_update(events: List<Event>, scene: Scene): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+        Screen <|-- ScreenOptions
+    }
+}
+
+@enduml

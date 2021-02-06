@@ -1,0 +1,58 @@
+@startuml
+
+title Pause
+
+package Scenes {
+    class SceneFade
+
+    interface Screen {
+        + pre_update(events: List<Event>): void
+        + update(delta_time: int): void 
+        + draw(screen: Surface): void
+    }
+
+    package Menu {
+        class Pause {
+            - undo: bool
+            - background: Surface
+            - snd_click: Sound
+            + Pause(undo: bool)
+            + exec_continue(): void
+            + exec_options(): void
+            + exec_quit(): void
+            + exec_cancel(): void
+            + exec_confirm(): void
+            + pre_update(events: List<Event>): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+        SceneFade <|-- Pause
+        Pause "1" *-- "*" Screen
+
+        class ScreenPause {
+            - text_y: int
+            - text: string
+            - font: Font
+            - buttons: Group<Button>
+            + ScreenPause(scene: Scene)
+            + pre_update(events: List<Event>, scene: Scene): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+        Screen <|-- ScreenPause
+
+        class ScreenOptions {
+            - text_y: int
+            - text: string
+            - font: Font
+            - buttons: Group<Button>
+            + ScreenOptions(scene: Scene)
+            + pre_update(events: List<Event>, scene: Scene): void
+            + update(delta_time: int): void 
+            + draw(screen: Surface): void
+        }
+        Screen <|-- ScreenOptions
+    }
+}
+
+@enduml
